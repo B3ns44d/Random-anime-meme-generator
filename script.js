@@ -31,12 +31,11 @@ function tenorCallback_randomsearch(responsetext)
 
     top_10_gifs = response_objects["results"];
 
-    // load the GIFs -- for our example we will load the first GIFs preview size (nanogif) and share size (tinygif)
-    var img = document.createElement('img');
-    var div = document.getElementById('memes');
-    img.alt = '';
-    img.src = top_10_gifs[0]["media"][0]["tinygif"]["url"];
-    div.appendChild(img);
+    var img = document.createElement('img'); // create an img element 
+    var div = document.getElementById('memes'); // get the "mems" elment from HTML div tag
+    img.alt = ''; // add img alt
+    img.src = top_10_gifs[0]["media"][0]["tinygif"]["url"]; // add img src 
+    div.appendChild(img); // append the img to the div HTML
 
 
     return;
@@ -44,23 +43,19 @@ function tenorCallback_randomsearch(responsetext)
 }
 
 
-// function to request random gifs for a given search term
-function grab_data()
+function grab_data() // function to request random gifs for a given search term
 {
     // set the apikey and limit
     var apikey = "GOGLGNV96Y1S"; // this is my apikey you can work with it if you want :)
     var lmt = 8;
 
-    // search term
-    var search_term = "anime meme";
+    var search_term = "anime meme"; // search term
 
-    // using default locale of en_US
     var search_url = "https://api.tenor.com/v1/random?q=" + search_term + "&key=" +
-            apikey + "&limit=" + lmt;
+            apikey + "&limit=" + lmt;  // using default locale of en_US
 
     httpGetAsync(search_url,tenorCallback_randomsearch);
-
-    // data will be loaded by each call's callback
-    return;
+   
+    return;  // data will be loaded by each call's callback
 }
 // Add more code to develop this website 
