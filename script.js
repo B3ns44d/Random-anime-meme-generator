@@ -34,10 +34,29 @@ function tenorCallback_randomsearch(responsetext)
     var img = document.createElement('img'); // create an img element 
     var div = document.getElementById('memes'); // get the "mems" elment from HTML div tag
     img.alt = ''; // add img alt
+    img.id = 'bIMG'
     img.src = top_10_gifs[0]["media"][0]["tinygif"]["url"]; // add img src 
     div.appendChild(img); // append the img to the div HTML
+    
+    // find img center 
+    // var rect1 = img.getBoundingClientRect();
+    // var cx = rect1.left + rect1.width * 0.5;    // find center of first image
+    // var cy = rect1.top + rect1.height * 0.5;
+    // var x = cx - rect1.width * 0.5;            // use center of first, subtract second
+    // var y = cy - rect1.height * 0.5;
 
-
+    // create download link
+    // var getleft = document.getElementById('bIMG').offsetLeft;
+    // var gettop = document.getElementById('bIMG').offsetTop;
+    // console.log(getleft, gettop);
+    // console.log("left:" + x, "top:" + y)
+    // var p = document.createElement('div');
+    // p.className = 'text'
+    // // p.style.cssText = "position:fixed;left:" + x + "px; top:" + y + "px";
+    // p.href = top_10_gifs[0]["media"][0]["tinygif"]["url"];
+    // p.textContent = 'Download';
+    // p.style.cssText = "position: element(#bIMG);";
+    // div.appendChild(p);
     return;
 
 }
